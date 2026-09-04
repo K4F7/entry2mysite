@@ -28,6 +28,17 @@ const requestedVariant = params.get('variant')?.toUpperCase() as VariantKey | un
 let activeVariant = variants.find((variant) => variant.key === requestedVariant) ?? variants[0];
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
+const kineticBackground = document.createElement('div');
+kineticBackground.className = 'kinetic-background';
+kineticBackground.setAttribute('aria-hidden', 'true');
+const kineticText = 'sein31'.repeat(14);
+kineticBackground.innerHTML = Array.from({ length: 8 }, (_, index) => `
+  <div class="kinetic-row row-${index + 1}">
+    <div class="kinetic-track"><span>${kineticText}</span><span>${kineticText}</span></div>
+  </div>
+`).join('');
+app.append(kineticBackground);
+
 const canvas = document.createElement('canvas');
 canvas.className = 'prototype-canvas';
 canvas.setAttribute('aria-label', 'Interactive d20. Click to roll and drag to rotate.');
@@ -137,7 +148,10 @@ function patternData(color: string, opacity: number) {
 
 function applyVariant() {
   document.body.className = activeVariant.className;
-  document.body.style.setProperty('--pattern-image', patternData(activeVariant.key === 'B' ? '#f8e8c8' : '#1b1714', activeVariant.key === 'C' ? 0.15 : 0.2));
+  const pattern = activeVariant.key === 'A'
+    ? 'none'
+    : patternData(activeVariant.key === 'B' ? '#f8e8c8' : '#1b1714', activeVariant.key === 'C' ? 0.15 : 0.2);
+  document.body.style.setProperty('--pattern-image', pattern);
   ornament.className = `variant-ornament ornament-${activeVariant.ornament}`;
   ornament.textContent = activeVariant.ornament === 'rail' ? 'sein31' : '';
   camera.position.set(0, 0, activeVariant.cameraZ);
@@ -189,6 +203,7 @@ function roll() {
   spinTurns = 2.5 + Math.random() * 1.5;
   rollStartedAt = performance.now();
   rolling = true;
+  document.body.classList.add('is-rolling');
 }
 
 function easeOutCubic(value: number) {
@@ -206,6 +221,7 @@ function animate(time: number) {
     if (progress >= 1) {
       die.quaternion.copy(targetQuaternion);
       rolling = false;
+      document.body.classList.remove('is-rolling');
     }
   } else if (!dragging) {
     const pulse = 0.08 + Math.sin(time * 0.003) * 0.035;
