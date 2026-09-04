@@ -55,9 +55,15 @@ switcher.setAttribute('aria-label', 'Prototype variants');
 switcher.innerHTML = `
   <button class="switcher-arrow" data-direction="previous" aria-label="Previous variant">←</button>
   <span class="switcher-label"></span>
+  <button class="texture-toggle" aria-label="切换背景纹理">✦</button>
   <button class="switcher-arrow" data-direction="next" aria-label="Next variant">→</button>
 `;
 app.append(switcher);
+
+const textureToggle = switcher.querySelector<HTMLButtonElement>('.texture-toggle')!;
+textureToggle.addEventListener('click', () => {
+  kineticBackground.dataset.texture = kineticBackground.dataset.texture === 'alt' ? 'base' : 'alt';
+});
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
