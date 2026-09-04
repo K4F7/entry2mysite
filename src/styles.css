@@ -13,7 +13,7 @@ body {
   --pattern-image: none;
   background-color: #f4eee8;
   background-image: var(--pattern-image);
-  background-size: 560px 330px;
+  background-size: 640px 360px;
   transition: background-color 350ms ease;
 }
 

@@ -130,7 +130,8 @@ let spinAxis = new THREE.Vector3(0.4, 0.8, 0.2).normalize();
 let spinTurns = 2.5;
 
 function patternData(color: string, opacity: number) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="560" height="330" viewBox="0 0 560 330" overflow="visible"><g fill="${color}" fill-opacity="${opacity}" font-family="Arial, sans-serif" font-weight="900" font-size="34" text-anchor="middle"><text x="95" y="65" transform="rotate(-28 95 65)">sein31</text><text x="280" y="65" transform="rotate(-28 280 65)">sein31</text><text x="465" y="65" transform="rotate(-28 465 65)">sein31</text><text x="95" y="165" transform="rotate(-28 95 165)">sein31</text><text x="280" y="165" transform="rotate(-28 280 165)">sein31</text><text x="465" y="165" transform="rotate(-28 465 165)">sein31</text><text x="95" y="265" transform="rotate(-28 95 265)">sein31</text><text x="280" y="265" transform="rotate(-28 280 265)">sein31</text><text x="465" y="265" transform="rotate(-28 465 265)">sein31</text></g></svg>`;
+  const repeatedName = 'sein31sein31sein31sein31sein31';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" overflow="visible"><g fill="${color}" fill-opacity="${opacity}" font-family="Arial, sans-serif" font-weight="900" font-size="48" letter-spacing="-1" textLength="860" lengthAdjust="spacingAndGlyphs"><text x="-92" y="82" transform="rotate(-28 320 82)">${repeatedName}</text><text x="-92" y="202" transform="rotate(-28 320 202)">${repeatedName}</text><text x="-92" y="322" transform="rotate(-28 320 322)">${repeatedName}</text></g></svg>`;
   return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 }
 
