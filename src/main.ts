@@ -37,6 +37,7 @@ kineticBackground.innerHTML = Array.from({ length: 26 }, (_, index) => `
     <div class="kinetic-track"><span>${kineticText}</span><span>${kineticText}</span></div>
   </div>
 `).join('');
+kineticBackground.dataset.texture = 'minimal';
 app.append(kineticBackground);
 
 const canvas = document.createElement('canvas');
