@@ -37,11 +37,11 @@ body.variant-c { background-color: #f6dfda; }
   z-index: 0;
   inset: 50% auto auto 50%;
   display: none;
-  width: 170vw;
-  height: 150vh;
+  width: 220vmax;
+  height: 220vmax;
   flex-direction: column;
-  justify-content: center;
-  gap: 34px;
+  justify-content: space-evenly;
+  gap: 18px;
   overflow: hidden;
   color: rgb(48 39 34 / 0.16);
   pointer-events: none;

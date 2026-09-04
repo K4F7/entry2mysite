@@ -31,8 +31,8 @@ const app = document.querySelector<HTMLDivElement>('#app')!;
 const kineticBackground = document.createElement('div');
 kineticBackground.className = 'kinetic-background';
 kineticBackground.setAttribute('aria-hidden', 'true');
-const kineticText = 'sein31'.repeat(14);
-kineticBackground.innerHTML = Array.from({ length: 8 }, (_, index) => `
+const kineticText = 'sein31'.repeat(28);
+kineticBackground.innerHTML = Array.from({ length: 16 }, (_, index) => `
   <div class="kinetic-row row-${index + 1}">
     <div class="kinetic-track"><span>${kineticText}</span><span>${kineticText}</span></div>
   </div>
