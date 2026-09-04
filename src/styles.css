@@ -41,11 +41,13 @@ body.variant-c { background-color: #f6dfda; }
   height: 220vmax;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 4px;
+  gap: 8px;
   overflow: hidden;
   color: rgb(48 39 34 / 0.16);
   pointer-events: none;
   transform: translate(-50%, -50%) rotate(-28deg);
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 body.variant-a .kinetic-background { display: flex; }
@@ -53,17 +55,17 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row {
   width: 100%;
   overflow: hidden;
-  flex: 0 0 54px;
+  flex: 0 0 96px;
 }
 
 .kinetic-track {
   display: flex;
   width: max-content;
   font-family: Arial, sans-serif;
-  font-size: clamp(58px, 5.8vw, 94px);
+  font-size: clamp(52px, 5.4vw, 88px);
   font-weight: 900;
   letter-spacing: -0.055em;
-  line-height: 0.86;
+  line-height: 0.92;
   white-space: nowrap;
   animation: kinetic-flow 26s linear infinite;
   transition: opacity 220ms ease;
