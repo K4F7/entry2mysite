@@ -41,7 +41,7 @@ body.variant-c { background-color: #f6dfda; }
   height: 220vmax;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 18px;
+  gap: 4px;
   overflow: hidden;
   color: rgb(48 39 34 / 0.16);
   pointer-events: none;
@@ -53,7 +53,7 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row {
   width: 100%;
   overflow: hidden;
-  flex: 0 0 70px;
+  flex: 0 0 54px;
 }
 
 .kinetic-track {
@@ -80,11 +80,6 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row:nth-child(6) .kinetic-track { animation-delay: -21s; }
 .kinetic-row:nth-child(7) .kinetic-track { animation-delay: -7s; }
 .kinetic-row:nth-child(8) .kinetic-track { animation-delay: -15s; }
-
-body.is-rolling .kinetic-track {
-  animation-duration: 5s;
-  opacity: 0.92;
-}
 
 @keyframes kinetic-flow {
   from { transform: translate3d(0, 0, 0); }

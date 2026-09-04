@@ -32,7 +32,7 @@ const kineticBackground = document.createElement('div');
 kineticBackground.className = 'kinetic-background';
 kineticBackground.setAttribute('aria-hidden', 'true');
 const kineticText = 'sein31'.repeat(28);
-kineticBackground.innerHTML = Array.from({ length: 16 }, (_, index) => `
+kineticBackground.innerHTML = Array.from({ length: 26 }, (_, index) => `
   <div class="kinetic-row row-${index + 1}">
     <div class="kinetic-track"><span>${kineticText}</span><span>${kineticText}</span></div>
   </div>
@@ -203,7 +203,6 @@ function roll() {
   spinTurns = 2.5 + Math.random() * 1.5;
   rollStartedAt = performance.now();
   rolling = true;
-  document.body.classList.add('is-rolling');
 }
 
 function easeOutCubic(value: number) {
@@ -221,7 +220,6 @@ function animate(time: number) {
     if (progress >= 1) {
       die.quaternion.copy(targetQuaternion);
       rolling = false;
-      document.body.classList.remove('is-rolling');
     }
   } else if (!dragging) {
     const pulse = 0.08 + Math.sin(time * 0.003) * 0.035;
