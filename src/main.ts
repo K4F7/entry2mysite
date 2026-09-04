@@ -1,3 +1,4 @@
+// THROWAWAY PROTOTYPE: three visual variants for the d20 entry, switchable via ?variant= on /prototype/d20.
 import * as THREE from 'three';
 import './styles.css';
 

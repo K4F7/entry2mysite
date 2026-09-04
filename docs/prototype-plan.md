@@ -1,5 +1,7 @@
 # d20 入口 Prototype 计划
 
+这是一个 throwaway UI prototype，保存在 [`prototype/d20-ui`](https://github.com/K4F7/entry2mysite/tree/prototype/d20-ui) 分支，用于回答“背景、骰子样式、投掷体验和桌面布局是否成立”。
+
 ## 目标
 
 在桌面端验证入口界面的视觉和交互是否成立：背景、骰子样式、投掷节奏、拖拽旋转和整体布局。
