@@ -62,7 +62,8 @@ app.append(switcher);
 
 const textureToggle = switcher.querySelector<HTMLButtonElement>('.texture-toggle')!;
 textureToggle.addEventListener('click', () => {
-  kineticBackground.dataset.texture = kineticBackground.dataset.texture === 'alt' ? 'base' : 'alt';
+  const mode = kineticBackground.dataset.texture ?? 'soft';
+  kineticBackground.dataset.texture = mode === 'soft' ? 'compact' : mode === 'compact' ? 'minimal' : 'soft';
 });
 
 const scene = new THREE.Scene();
