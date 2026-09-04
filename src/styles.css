@@ -41,7 +41,7 @@ body.variant-c { background-color: #f6dfda; }
   height: 220vmax;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 2px;
+  gap: 0;
   overflow: hidden;
   color: rgb(48 39 34 / 0.05);
   pointer-events: none;
@@ -55,17 +55,17 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row {
   width: 100%;
   overflow: hidden;
-  flex: 0 0 96px;
+  flex: 0 0 76px;
 }
 
 .kinetic-track {
   display: flex;
   width: max-content;
   font-family: Arial, sans-serif;
-  font-size: clamp(52px, 4.8vw, 72px);
+  font-size: 64px;
   font-weight: 900;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -3.5px;
+  line-height: 66px;
   white-space: nowrap;
   animation: kinetic-flow 180s linear infinite;
   transition: opacity 220ms ease;
@@ -76,11 +76,11 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row:nth-child(even) .kinetic-track { animation-direction: reverse; animation-duration: 220s; }
 .kinetic-row:nth-child(3n) .kinetic-track { animation-duration: 160s; opacity: 0.5; }
 .kinetic-background[data-texture="compact"] .kinetic-track {
-  letter-spacing: -0.08em;
+  letter-spacing: -5px;
   opacity: 0.78;
 }
 .kinetic-background[data-texture="minimal"] .kinetic-track {
-  letter-spacing: -0.055em;
+  letter-spacing: -3.5px;
   opacity: 0.42;
 }
 .kinetic-row:nth-child(2) .kinetic-track { animation-delay: -9s; }
