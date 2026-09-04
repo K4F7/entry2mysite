@@ -33,6 +33,7 @@ body.variant-c { background-color: #f6dfda; }
 .prototype-canvas:active { cursor: grabbing; }
 
 .kinetic-background {
+  --texture-size: clamp(64px, 4vw, 112px);
   position: fixed;
   z-index: 0;
   inset: 50% auto auto 50%;
@@ -55,17 +56,17 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row {
   width: 100%;
   overflow: hidden;
-  flex: 0 0 76px;
+  flex: 0 0 calc(var(--texture-size) * 1.18);
 }
 
 .kinetic-track {
   display: flex;
   width: max-content;
   font-family: Arial, sans-serif;
-  font-size: 64px;
+  font-size: var(--texture-size);
   font-weight: 900;
-  letter-spacing: -3.5px;
-  line-height: 66px;
+  letter-spacing: calc(var(--texture-size) * -0.055);
+  line-height: calc(var(--texture-size) * 1.03);
   white-space: nowrap;
   animation: kinetic-flow 180s linear infinite;
   transition: opacity 220ms ease;
@@ -76,11 +77,11 @@ body.variant-a .kinetic-background { display: flex; }
 .kinetic-row:nth-child(even) .kinetic-track { animation-direction: reverse; animation-duration: 220s; }
 .kinetic-row:nth-child(3n) .kinetic-track { animation-duration: 160s; opacity: 0.5; }
 .kinetic-background[data-texture="compact"] .kinetic-track {
-  letter-spacing: -5px;
+  letter-spacing: calc(var(--texture-size) * -0.08);
   opacity: 0.78;
 }
 .kinetic-background[data-texture="minimal"] .kinetic-track {
-  letter-spacing: -3.5px;
+  letter-spacing: calc(var(--texture-size) * -0.055);
   opacity: 0.42;
 }
 .kinetic-row:nth-child(2) .kinetic-track { animation-delay: -9s; }
