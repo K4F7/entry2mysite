@@ -14,4 +14,4 @@ Single-context layout: root `CONTEXT.md` and `docs/adr/`. See `docs/agents/domai
 
 ### Project context
 
-This project is the entry point for my personal site. A planned feature is an interactive twenty-sided die (d20).
+This project is the entry point for my personal site. The current product direction is a fixed Portal hub with a daily-seeded, randomly generated Cozy Low-Poly World. World uses a six-sided die (d6) for movement.
